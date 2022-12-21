@@ -9,7 +9,11 @@ const HomePage = (props) => {
         <title>Meetup Project</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <MeetupList meetups={props.meetups} />
+      {props.meetups.length > 0 ? (
+        <MeetupList meetups={props.meetups} />
+      ) : (
+        <p>No Meetups</p>
+      )}
     </>
   );
 };
