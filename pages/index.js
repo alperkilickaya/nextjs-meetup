@@ -28,7 +28,7 @@ const HomePage = (props) => {
   };
 } */
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const uri = process.env.MONGODB;
 
   const client = new MongoClient(uri, {
@@ -53,7 +53,6 @@ export async function getStaticProps() {
         id: meetup._id.toString(),
       })),
     },
-    revalidate: 10,
   };
 }
 
